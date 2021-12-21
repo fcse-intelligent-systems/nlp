@@ -48,7 +48,7 @@ if __name__ == '__main__':
     dataset['rephrase_indices'] = dataset['rephrase_tokens'].apply(lambda x: np.array([word_to_id[i] for i in x]))
     rephrase_indices = dataset['rephrase_indices'].values
 
-    train_sentences, train_rephrases, test_sentences, test_rephrases = train_test_split(sentence_indices,
+    train_sentences, test_sentences, train_rephrases, test_rephrases = train_test_split(sentence_indices,
                                                                                         rephrase_indices,
                                                                                         test_size=0.1,
                                                                                         random_state=0)

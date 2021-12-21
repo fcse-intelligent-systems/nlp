@@ -34,6 +34,7 @@ def create_vocabulary(sentence_tokens):
     id_to_word = {index: word for word, index in zip(vocabulary, range(len(vocabulary)))}
     return vocabulary, word_to_id, id_to_word
 
+
 def create_train_data(sentences, rephrases):
     input_sentences, input_rephrases, next_words = [], [], []
     for sentence, rephrase in zip(sentences, rephrases):
@@ -92,7 +93,7 @@ if __name__ == '__main__':
     dataset['rephrase_indices'] = dataset['rephrase_tokens'].apply(lambda x: np.array([word_to_id[i] for i in x]))
     rephrase_indices = dataset['rephrase_indices'].values
 
-    train_sentences, train_rephrases, test_sentences, test_rephrases = train_test_split(sentence_indices,
+    train_sentences, test_sentences, train_rephrases, test_rephrases = train_test_split(sentence_indices,
                                                                                         rephrase_indices,
                                                                                         test_size=0.1,
                                                                                         random_state=0)
