@@ -16,8 +16,8 @@ def create_train_data(sentences, translations):
 
 def create_model(padding_size, vocabulary_size_en, vocabulary_size_es, embedding_size):
     encoder_inputs = Input(shape=(padding_size,))
-    encoder_embedding = Embedding(input_dim=vocabulary_size_en, output_dim=embedding_size,
-                                  trainable=False)(encoder_inputs)
+    encoder_embedding = Embedding(input_dim=vocabulary_size_en,
+                                  output_dim=embedding_size)(encoder_inputs)
     encoder = LSTM(128, return_state=True)
     _, state_h, state_c = encoder(encoder_embedding)
     encoder_states = [state_h, state_c]

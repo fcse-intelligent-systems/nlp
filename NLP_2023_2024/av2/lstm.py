@@ -1,4 +1,4 @@
-from tensorflow.keras.layers import LSTM, Embedding, Input()
+from tensorflow.keras.layers import LSTM, Embedding, Input
 from tensorflow.keras.models import Sequential, Model
 
 if __name__ == '__main__':

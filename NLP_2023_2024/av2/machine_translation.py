@@ -83,4 +83,4 @@ if __name__ == '__main__':
               next_words,
               epochs=5, batch_size=16)
 
-    model.save_weights('..models/EncoderDecoder.h5')
+    model.save_weights('../models/EncoderDecoder.h5')
