@@ -21,7 +21,7 @@ if __name__ == '__main__':
     tokenizer = BertTokenizerFast.from_pretrained('bert-base-uncased')
 
     tokens = tokenizer(sequences, truncation=True, max_length=100)
-    tokens = {k: [v[i: i + 5] for i in range(0, len(v), 5)] for k, v in tokens.items()}
+    tokens = {k: [[e for el in v[i: i + 5] for e in el] for i in range(0, len(v), 5)] for k, v in tokens.items()}
 
     print(len(tokens['input_ids']))
 
